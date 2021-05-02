@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Listy</name>
+    </assembly>
+    <members>
+        <member name="T:Listy.Listy">
+            <summary>
+            <para>Statyczna klasa, która zawiera metody pokazujące rózne interaktywne listy, z których użytkownik może wybierać elementy</para>
+            <para>Sterowanie w liście odbywa się za pomocą WSAD lub strzałek, natomiast potwierdzanie miejsce ENTERem</para>
+            </summary>
+        </member>
+        <member name="F:Listy.Listy.TableError">
+            <value>Błąd, który się pokazuje, gdy nasza tabela nie ma zawartości (ma długość 0)</value>
+        </member>
+        <member name="M:Listy.Listy.TableDraw(System.String[],System.Int32)">
+            <summary>
+            Rysuje w konsoli wybraną tabelę wraz z cyframi świadczącymi o kolejności danych pól
+            </summary>
+            <param name="table"></param>
+            <param name="color"></param>
+        </member>
+        <member name="M:Listy.Listy.ListaPojedyncza(System.String[],System.Boolean,System.Int32)">
+            <summary>
+            Interaktywna lista numerowana pozwalająca wybrać użytkownikowi dane pole ze wskazanej tabeli
+            </summary>
+            <param name="Wybory">Tablica, która będzie wyświetlona użytkownikowi z odpowiednio zaznaczonym przez niego polem</param>
+            <param name="zapetlanieNaKoncach">Dla TRUE pozwala zjechać na sam koniec listy z jego początku jadąc do góry oraz na sam początek z końca jadąc w dół</param>
+            <param name="dodatkowyAkapit">Ile dodatkowych liń ma być przed pokazaniem tabeli</param>
+            <exception cref="F:Listy.Listy.TableError">Wyrzucane, gdy tabela z wyborami jest pusta</exception>
+            <returns>Liczbę całkowitą odpowiadającą wybranemu przedmiotowi z tabeli (od 0 do długości-1)</returns>
+        </member>
+        <member name="M:Listy.Listy.ListaPodwojna(System.String[][],System.Boolean,System.Int32)">
+            <summary>
+            <para>Podwójna lista numerowana wyświetlająca z tabeli tabel (jagged array[][]) pierwsze wyrazy z każdej (o indeksie 0).
+            Po zatwierdzeniu jakieś opcji pokazuje resztę wyrazów znajdujących się w danej tabeli (tabeli o wybranym przez użytkownika indeksie).</para>
+            <para>Sterowanie odbywa się z pomocą 'W' i 'S' (lub strzałek góra/dół). Zatwierdza się wybór ENTEREM. W drugiej liście
+            steruje się 'A' i 'D' (lub strzałki lewo/prawo), zatwierdza się ENTERem, a anuluje wybór BACKSPACEem.</para>
+            </summary>
+            <param name="Wybory">Tablica tabel, których pierwsze elementy (dalej Tematy) zostaną wyświetlone użutkownikowi, a po potwierdzeniu (guzikiem ENTER)
+            zostaną wyświetlone pozostałe elementy z tej tabeli, której Temat wybrał użytkownik.</param>
+            <param name="zapetlanieNaKoncach">Dla TRUE pozwala zjechać na sam koniec listy z jego początku jadąc do góry oraz na sam początek z końca jadąc w dół</param>
+            <param name="dodatkowyAkapit">Ile dodatkowych liń ma być przed pokazaniem tabeli</param>
+            <returns>Ciąg znaków odpowiadającym wybranym przez użytwkonika indeksom miejsc w tabeli, z czego pierwszym jest indeks Tematu 
+            (od 0 do ilości tematów) + indeks wybranego przedmiotu (od 1 od ilości przedmiotów).
+            W przypadku wprowadzenia tabeli tylko z tematem (czyli o długości 1) zostanie zwrócony indeks tematu + "0"</returns>
+             <remarks>Np: <c>tab[...] = new string[] {"Temat tabeli", "Przedmiot1", "Przedmiot2",...};</c></remarks>
+        </member>
+    </members>
+</doc>

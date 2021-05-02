@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>4.0.2</Version>
+    <Authors>Maciej Kuchcik</Authors>
+    <Description>Plik z interaktywnymi listami, z których użytwkonik może w szybki i prosty sposób wybierać pola z tabel
+Sterowanie odbywa się za pomocą WSAD (lub strzałek). Zatwierdza się wybór na Enterze, a anuluje się go klikając Backspace</Description>
+    <Copyright />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\Programowanie\BIBLIOTEKA_KLAS\NuGet\</OutputPath>
+    <DocumentationFile>C:\Programowanie\Lista\Lista\Listy.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>
