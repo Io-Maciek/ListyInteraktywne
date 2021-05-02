@@ -114,6 +114,14 @@ namespace Listy
             if (Wybory.GetLength(0) == 0)
             {
                 throw Listy.TableError;
+            }else if(Wybory.GetLength(0) == 1 && Wybory[0].Length==0)
+            {
+                throw Listy.TableError;
+            }
+            else if (Wybory.GetLength(0) == 1 && Wybory[0].Length > 0)
+            {
+                int choice = ListaPojedyncza(Wybory[0], zapetlanieNaKoncach, dodatkowyAkapit);
+                return "0" + choice.ToString() ;
             }
             else
             {
@@ -123,22 +131,7 @@ namespace Listy
                 Console.CursorVisible = false;
                 int miejsce = 1;
                 int choice = 0;
-                string[] TitlesValues;
-                if (Wybory.GetLength(0) == 1 && Wybory[0].Length != 0)
-                {
-                    //TitlesValues = Wybory[0];
-                    string[][] W2 = new string[Wybory[0].Length - 1][];
-                    for (int i = 0; i < Wybory[0].Length; i++)
-                    {
-                        W2[i] = Wybory[0][i];
-                    }
-                    Wybory = = new string[Wybory[0].Length - 1][];
-                    Wybory = W2;
-                }
-                else if (Wybory.GetLength(0) == 1 && Wybory[0].Length == 0)
-                    throw Listy.TableError;
-                else
-                    TitlesValues = GetFirstValues(Wybory);
+                var TitlesValues = GetFirstValues(Wybory);
 
                 while (p1)
                 {
