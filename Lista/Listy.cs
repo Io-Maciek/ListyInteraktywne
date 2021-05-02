@@ -221,7 +221,6 @@ namespace Listy
             string[] ret = new string[tab.GetLength(0)];
             for (int i = 0; i < tab.GetLength(0); i++)
             {
-
                 ret[i] = tab[i][0];
             }
             return ret;
