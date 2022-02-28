@@ -3,9 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>5.0.1</Version>
-    <Authors>Maciej Kuchcik</Authors>
-    <Description>Plik z interaktywnymi listami, z których użytwkonik może w szybki i prosty sposób wybierać pola z tabel
+    <Version>5.0.2</Version>
+    <Authors>Io</Authors>
+    <Description>Plik z interaktywnymi listami, z których użytkonwik może w szybki i prosty sposób wybierać pola z tabel
 Sterowanie odbywa się za pomocą WSAD (lub strzałek). Zatwierdza się wybór na Enterze, a anuluje się go klikając Backspace</Description>
     <Copyright />
   </PropertyGroup>
