@@ -4,33 +4,40 @@
         <name>Listy</name>
     </assembly>
     <members>
-        <member name="T:Listy.Listy">
+        <member name="T:Listy.EmptyTableException">
+            <summary>
+            Reprezentuje błąd, który wystąpi, gdy tabela z wyborami jest pusta
+            </summary>
+        </member>
+        <member name="M:Listy.EmptyTableException.#ctor">
+            <summary>
+            Tworzy nowe wystąpienie klasy <c>EmptyTableException</c>
+            </summary>
+        </member>
+        <member name="T:Listy.Wybory">
             <summary>
             <para>Statyczna klasa, która zawiera metody pokazujące rózne interaktywne listy, z których użytkownik może wybierać elementy</para>
             <para>Sterowanie w liście odbywa się za pomocą WSAD lub strzałek, natomiast potwierdzanie miejsce ENTERem</para>
             </summary>
         </member>
-        <member name="F:Listy.Listy.TableError">
-            <value>Błąd, który się pokazuje, gdy nasza tabela nie ma zawartości (ma długość 0)</value>
-        </member>
-        <member name="M:Listy.Listy.TableDraw(System.String[],System.Int32)">
+        <member name="M:Listy.Wybory.TableDraw(System.String[],System.Int32)">
             <summary>
             Rysuje w konsoli wybraną tabelę wraz z cyframi świadczącymi o kolejności danych pól
             </summary>
             <param name="table"></param>
             <param name="color"></param>
         </member>
-        <member name="M:Listy.Listy.ListaPojedyncza(System.String[],System.Boolean,System.Int32)">
+        <member name="M:Listy.Wybory.ListaPojedyncza(System.String[],System.Boolean,System.Int32)">
             <summary>
             Interaktywna lista numerowana pozwalająca wybrać użytkownikowi dane pole ze wskazanej tabeli
             </summary>
             <param name="Wybory">Tablica, która będzie wyświetlona użytkownikowi z odpowiednio zaznaczonym przez niego polem</param>
             <param name="zapetlanieNaKoncach">Dla TRUE pozwala zjechać na sam koniec listy z jego początku jadąc do góry oraz na sam początek z końca jadąc w dół</param>
             <param name="dodatkowyAkapit">Ile dodatkowych liń ma być przed pokazaniem tabeli</param>
-            <exception cref="F:Listy.Listy.TableError">Wyrzucane, gdy tabela z wyborami jest pusta</exception>
+            <exception cref="T:Listy.EmptyTableException">Wyrzucane, gdy tabela z wyborami jest pusta</exception>
             <returns>Liczbę całkowitą odpowiadającą wybranemu przedmiotowi z tabeli (od 0 do długości-1)</returns>
         </member>
-        <member name="M:Listy.Listy.ListaPodwojna(System.String[][],System.Boolean,System.Int32)">
+        <member name="M:Listy.Wybory.ListaPodwojna(System.String[][],System.Boolean,System.Int32)">
             <summary>
             <para>Podwójna lista numerowana wyświetlająca z tabeli tabel (jagged array[][]) pierwsze wyrazy z każdej (o indeksie 0).
             Po zatwierdzeniu jakieś opcji pokazuje resztę wyrazów znajdujących się w danej tabeli (tabeli o wybranym przez użytkownika indeksie).</para>

@@ -6,10 +6,8 @@ namespace Listy
     /// <para>Statyczna klasa, która zawiera metody pokazujące rózne interaktywne listy, z których użytkownik może wybierać elementy</para>
     /// <para>Sterowanie w liście odbywa się za pomocą WSAD lub strzałek, natomiast potwierdzanie miejsce ENTERem</para>
     /// </summary>
-    public abstract class Listy
+    public abstract class Wybory
     {
-        /// <value>Błąd, który się pokazuje, gdy nasza tabela nie ma zawartości (ma długość 0)</value>
-        public static Exception TableError = new Exception("Podana tabela jest pusta.");
         /// <summary>
         /// Rysuje w konsoli wybraną tabelę wraz z cyframi świadczącymi o kolejności danych pól
         /// </summary>
@@ -36,7 +34,7 @@ namespace Listy
         /// <param name="Wybory">Tablica, która będzie wyświetlona użytkownikowi z odpowiednio zaznaczonym przez niego polem</param>
         /// <param name="zapetlanieNaKoncach">Dla TRUE pozwala zjechać na sam koniec listy z jego początku jadąc do góry oraz na sam początek z końca jadąc w dół</param>
         /// <param name="dodatkowyAkapit">Ile dodatkowych liń ma być przed pokazaniem tabeli</param>
-        /// <exception cref="TableError">Wyrzucane, gdy tabela z wyborami jest pusta</exception>
+        /// <exception cref="EmptyTableException">Wyrzucane, gdy tabela z wyborami jest pusta</exception>
         /// <returns>Liczbę całkowitą odpowiadającą wybranemu przedmiotowi z tabeli (od 0 do długości-1)</returns>
         public static int ListaPojedyncza(string[] Wybory, bool zapetlanieNaKoncach = false, int dodatkowyAkapit = 0)
         {
@@ -91,7 +89,7 @@ namespace Listy
                 return 0;
             }
             else
-                throw TableError;
+                throw new EmptyTableException();
         }
 
 
@@ -113,10 +111,10 @@ namespace Listy
         {
             if (Wybory.GetLength(0) == 0)
             {
-                throw Listy.TableError;
+                throw new EmptyTableException();
             }else if(Wybory.GetLength(0) == 1 && Wybory[0].Length==0)
             {
-                throw Listy.TableError;
+                throw new EmptyTableException();
             }
             else if (Wybory.GetLength(0) == 1 && Wybory[0].Length > 0)
             {
